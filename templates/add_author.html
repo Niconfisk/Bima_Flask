@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Autor - Biblioteca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Biblioteca</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('main.index') }}">Início</a></li>
+            <li><a href="{{ url_for('main.books') }}">Livros</a></li>
+            <li><a href="{{ url_for('main.authors') }}">Autores</a></li>
+            <li><a href="{{ url_for('main.add_book') }}">Adicionar Livro</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Adicionar Autor</h2>
+        <form action="{{ url_for('main.add_author') }}" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <button type="submit">Adicionar Autor</button>
+        </form>
+    </main>
+</body>
+</html>

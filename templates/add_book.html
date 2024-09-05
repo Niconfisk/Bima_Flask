@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Livro - Biblioteca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Biblioteca</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('main.index') }}">Início</a></li>
+            <li><a href="{{ url_for('main.books') }}">Livros</a></li>
+            <li><a href="{{ url_for('main.authors') }}">Autores</a></li>
+            <li><a href="{{ url_for('main.add_author') }}">Adicionar Autor</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Adicionar Livro</h2>
+        <form action="{{ url_for('main.add_book') }}" method="post">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Descrição:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="authors">Autores:</label>
+            <select id="authors" name="authors" multiple>
+                {% for author in authors %}
+                    <option value="{{ author.id }}">{{ author.name }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Adicionar Livro</button>
+        </form>
+    </main>
+</body>
+</html>

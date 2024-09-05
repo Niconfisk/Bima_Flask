@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial - Biblioteca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Biblioteca</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('main.books') }}">Livros</a></li>
+            <li><a href="{{ url_for('main.authors') }}">Autores</a></li>
+            <li><a href="{{ url_for('main.add_book') }}">Adicionar Livro</a></li>
+            <li><a href="{{ url_for('main.add_author') }}">Adicionar Autor</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Estante</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autores</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.authors if book.authors else 'Nenhum autor' }}</td>
+                    <td>{{ book.description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

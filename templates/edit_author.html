@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Autor - Biblioteca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Biblioteca</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('main.index') }}">👈Voltar ao Início</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Editar Autor</h2>
+        <form action="{{ url_for('main.edit_author', id=author.id) }}" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" value="{{ author.name }}" required>
+            <button type="submit">Salvar</button>
+        </form>
+    </main>
+</body>
+</html>

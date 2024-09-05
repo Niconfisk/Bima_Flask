@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autores - Biblioteca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Biblioteca</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('main.index') }}">Início</a></li>
+            <li><a href="{{ url_for('main.books') }}">Livros</a></li>
+            <li><a href="{{ url_for('main.add_book') }}">Adicionar Livro</a></li>
+            <li><a href="{{ url_for('main.add_author') }}">Adicionar Autor</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Autores</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for author in authors %}
+                <tr>
+                    <td>{{ author.name }}</td>
+                    <td>
+                        <a href="{{ url_for('main.edit_author', id=author.id) }}" class="btn-edit">Editar</a>
+                        <form action="{{ url_for('main.delete_author', id=author.id) }}" method="post" style="display:inline;" class="btn-delete">
+                            <button type="submit" class="btn-delete">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

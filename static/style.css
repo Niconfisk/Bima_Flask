@@ -1,0 +1,197 @@
+/* Normalize */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  
+  nav {
+    background-color: #333;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  nav a:hover {
+    color: #ccc;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+  }
+  
+  main h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  main p {
+    margin-bottom: 1em;
+  }
+  
+  main ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  main li {
+    margin-bottom: 1em;
+  }
+  
+  main a {
+    text-decoration: none;
+    color: #337ab7;
+    transition: color 0.2s ease;
+  }
+  
+  main a:hover {
+    color: #23527c;
+  }
+  
+  /* Formulários */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
+    margin-bottom: 0.5em;
+  }
+  
+  form input, form textarea {
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form input[type="submit"] {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #23527c;
+  }
+  
+  /* Tabela */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 1em;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f0f0f0;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    main {
+      flex-direction: column;
+    }
+    nav ul {
+      flex-direction: column;
+    }
+    nav li {
+      margin-right: 0;
+    }
+    form {
+      padding: 1em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.5em;
+    }
+    main h2 {
+      font-size: 1.2em;
+    }
+    form input, form textarea {
+      width: 100%;
+    }
+  }
+
+  .btn-edit {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    
+    .btn-edit:hover {
+    background-color: #3e8e41;
+    }
+    
+    .btn-delete {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    
+    .btn-delete:hover {
+    background-color: #cc0000;
+    }
